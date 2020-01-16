@@ -1,55 +1,64 @@
-/*
-*=================================
-* Hugo UILite Portfolio v0.8
-*=================================
-*
-* Free version https://uicard.io/products/hugo-uilite
-* Pro version https://uicard.io/products/hugo-uilite-pro
-* Demo https://demo.uicard.io/hugo-uilite-portfolio-demo/
-*
-* Coded By UICardio
-*
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*
-*/
-
-
-let menuBtn = $("#menuBar");
-
-menuBtn.click(function(){
-
-  $('.hamburger-menu').toggleClass('animate');
-
-  if($(".secondaryMenu").hasClass("active")){
-    
-    $(".secondaryMenu").removeClass("active");
-    setTimeout(function(){
-      $(".primaryMenu").addClass("active");
-    },400);
-
-    
-  } else {
-    $(".primaryMenu").removeClass("active");
-  
-    setTimeout(function(){
-      $(".secondaryMenu").addClass("active");
-    },350);
-  }
+$(window).load(function(){
+	$('#preloader').fadeOut('slow',function(){$(this).remove();});
 });
 
-$(document).ready(function(){
-  var elements = $(".sidebar > .main-info *");
 
-  console.log(elements);
-
-  for(let i = 0; i < elements.length; i++){
-    setTimeout(function(){
-      $(elements[i].tagName).addClass("bs");
-    }, (400 * i) - 90 * i );
-  }
-
-  setTimeout(function(){
-    $(".main-content").addClass("active");
-  }, 1900);
-
+/******************************************************************************************************************************
+Learn More Page Scroll
+*******************************************************************************************************************************/
+$(function() {
+    $('a.page-scroll').bind('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+    });
 });
+
+/******************************************************************************************************************************
+Menu
+*******************************************************************************************************************************/ 
+(function() {
+
+	var bodyEl = document.body,
+		//content = document.querySelector( '.content-wrap' ),
+		openbtn = document.getElementById( 'open-button' ),
+		closebtn = document.getElementById( 'close-button' ),
+		isOpen = false;
+
+	function init() {
+		initEvents();
+	}
+
+	function initEvents() {
+		openbtn.addEventListener( 'click', toggleMenu );
+		if( closebtn ) {
+			closebtn.addEventListener( 'click', toggleMenu );
+		}
+
+		/* close the menu element if the target it´s not the menu element or one of its descendants..
+		content.addEventListener( 'click', function(ev) {
+			var target = ev.target;
+			if( isOpen && target !== openbtn ) {
+				toggleMenu();
+			}
+		} );
+		*/
+	}
+
+	function toggleMenu() {
+		if( isOpen ) {
+			classie.remove( bodyEl, 'show-menu' );
+		}
+		else {
+			classie.add( bodyEl, 'show-menu' );
+		}
+		isOpen = !isOpen;
+	}
+
+	init();
+
+})();
+
+
