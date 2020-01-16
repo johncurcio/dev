@@ -1,4 +1,3 @@
-# dev
+# Personal website
 
-- Currently not working
-
+![website](img/site.png)
