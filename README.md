@@ -4,7 +4,7 @@
 
 ## TODO
 
-- [] Summarize about page
-- [] Improve education section
-- [] Improve contact section
-- [] Add things to portfolio
+- [ ] Summarize about page
+- [ ] Improve education section
+- [ ] Improve contact section
+- [ ] Add things to portfolio
