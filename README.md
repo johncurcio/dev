@@ -7,4 +7,4 @@
 - [ ] Summarize about page
 - [ ] Improve education section
 - [ ] Improve contact section
-- [ ] Add things to portfolio
+- [ ] Add 3 other projects to portfolio
