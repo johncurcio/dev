@@ -1,3 +1,3 @@
-# Personal website
+# Me
 
 ![website](img/site.png)
